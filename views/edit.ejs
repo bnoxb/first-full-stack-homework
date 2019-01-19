@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/main.css" />
+    
+</head>
+<body>
+    Edit <h1><%=egypt.name%></h1>
+    <form action="/egypt/<%=egypt._id%>?_method=PUT" method="POST">
+        God Name:<input type="text" name="name" value="<%=egypt.name%>"><br>
+        Realms:<input type="text" name="realm" value="<%=egypt.realm%>"><br>
+        Appearance:<input type="text" name="appearance" value="<%=egypt.appearance%>"><br>
+        God is Alive:<input type="checkbox" name="isAlive" <% if (egypt.isAlive===true){%>
+                checked
+            <%}%>><br>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/egypt"><button type="submit">Go Back</button></a>
+    <form action="/egypt/<%=egypt._id%>?_method=DELETE" method="POST"><button type="submit">Delete <%=egypt.name%></button></form>
+</body>
+</html>
